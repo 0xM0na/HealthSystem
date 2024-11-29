@@ -1,0 +1,114 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Arabic Font Import (Google Fonts Example) */
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap');
+  
+  /* Root Variables for Colors */
+  :root {
+    --primary-color: #6a4c93; /* Purple */
+    --secondary-color: #4a90e2; /* Soft Blue */
+    --accent-color: #5f2787; /* Nude Soft Peach */
+    --text-color: #2c3e50; /* Dark Gray */
+    --nav-bar-color: #EFB6C8; /* Charcoal Gray for navigation bar */
+    --background-color: #6a4c93; /* Light Nude background */
+    --button-hover-color: #e1b09d; /* Hover Color for buttons */
+  }
+  
+  /* Global Styles */
+  body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--background-color); /* Light Nude Background */
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  /* Header Styles */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--nav-bar-color); /* Charcoal Gray */
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-img {
+    width: 130px;
+    height: auto;
+    margin-right: 10px; 
+  }
+  
+  .logo span {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  /* Navigation Menu */
+  .nav-menu ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav-menu ul li {
+    margin: 0 20px;
+  }
+  
+  .nav-menu ul li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+    transition: color 0.3s;
+  }
+  
+  .nav-menu ul li a:hover {
+    color: var(--accent-color);
+  }
+  
+  /* Authentication Buttons */
+  .auth-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .btn.login {
+    background-color: #ffffff;
+    color: var(--primary-color);
+    border: 1px solid #fff;
+  }
+  
+  .btn.login:hover {
+    background-color: var(--accent-color); /* Hover to Nude Color */
+    color: #ffffff;
+  }
+  
+  .btn.signup {
+    background-color: var(--primary-color);
+    color: #ffffff;
+  }
+  
+  .btn.signup:hover {
+    background-color: var(--button-hover-color);
+  }
+  
+  
