@@ -187,4 +187,62 @@
     margin-right: auto;
   }
   
+  /* General Styles for the Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns by default */
+    gap: 20px;
+    padding: 40px 20px;
+    justify-items: center;
+  }
+  
+  .feature-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 280px;
+  }
+  
+  .feature-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .feature-card p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .feature-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Responsiveness for smaller screens */
+  @media (max-width: 1200px) {
+    .features {
+      grid-template-columns: repeat(3, 1fr); /* Three columns on medium screens */
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .features {
+      grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .features {
+      grid-template-columns: 1fr; /* One column on mobile screens */
+    }
+  }
   
