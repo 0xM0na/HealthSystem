@@ -27,24 +27,42 @@
         <li><a href="#contact">تواصل معنا</a></li>
       </ul>
     </nav>
+
     <div class="logo">
         <img src="logo.png" alt="Re3aya Logo" class="logo-img">
 
       </div>
     
   </header>
-   
-  <!--search-->
-  <section class="search-section">
-    <div class="search-content">
-      <h2>إدارة صحتك بأيديكم</h2>
-      <p>منصة متكاملة لإدارة الرعاية الصحية، حيث يمكنك حجز المواعيد، البحث عن مقدمي الرعاية الصحية، متابعة تاريخك المرضي، والحصول على استشارات طبية عبر الإنترنت. بالإضافة إلى إشعارات وتذكيرات للمواعيد لضمان الاهتمام المستمر بصحتك.</p>
+
+
+<!--search-->
+<section class="search-section">
+  <div class="search-content">
+    <h2>إدارة صحتك بأيديكم</h2>
+    <p>منصة متكاملة لإدارة الرعاية الصحية، حيث يمكنك حجز المواعيد، البحث عن مقدمي الرعاية الصحية، متابعة تاريخك المرضي، والحصول على استشارات طبية عبر الإنترنت. بالإضافة إلى إشعارات وتذكيرات للمواعيد لضمان الاهتمام المستمر بصحتك.</p>
+    <form action="appointment.html" method="get" id="search-form">
       <div class="search-bar">
-        <input type="text" placeholder="ابحث عن طبيب أو عيادة">
-        <button>بحث</button>
+        <input type="text" id="search" name="doctor" placeholder="ابحث عن طبيب أو عيادة" list="doctor-options">
+        <datalist id="doctor-options">
+          <option value="دكتور أحمد علي - جراحة">
+          <option value="دكتور فاطمة مصطفى - طب الأطفال">
+          <option value="دكتور محمد يوسف - أمراض القلب">
+          <option value="دكتور سعيد عبد الله - طب العيون">
+          <option value="دكتور هالة مصطفى - الأمراض الجلدية">
+          <option value="دكتور كريم سامي - طب الأسنان">
+          <option value="دكتور نور الدين - الأنف والأذن والحنجرة">
+          <option value="دكتور عادل سعيد - الطب الباطني">
+        </datalist>
+        <button type="submit">بحث</button>
       </div>
-    </div>
-  </section>
+    </form>
+  </div>
+</section>
+
+
+
+
   
   <!--cards-->
   <section class="features">
