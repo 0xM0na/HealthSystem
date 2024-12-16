@@ -17,6 +17,7 @@
       </a>
       
       </div>
+<!--NavBar-->
     <nav class="nav-menu">
       <ul>
         <li><a href="#home">الرئيسية</a></li>
@@ -39,12 +40,22 @@
 <!--search-->
 <section class="search-section">
   <div class="search-content">
-    <h2>إدارة صحتك بأيديكم</h2>
+    <h2>إدارة صحتكم بأيديكم</h2>
     <p>منصة متكاملة لإدارة الرعاية الصحية، حيث يمكنك حجز المواعيد، البحث عن مقدمي الرعاية الصحية، متابعة تاريخك المرضي، والحصول على استشارات طبية عبر الإنترنت. بالإضافة إلى إشعارات وتذكيرات للمواعيد لضمان الاهتمام المستمر بصحتك.</p>
     <form action="appointment.html" method="get" id="search-form">
       <div class="search-bar">
-        <input type="text" id="search" name="doctor" placeholder="ابحث عن طبيب أو عيادة" list="doctor-options">
-        <datalist id="doctor-options">
+        <input 
+          type="text" 
+          id="search" 
+          placeholder="ابحث عن طبيب أو عيادة..." 
+          oninput="filterResults()" 
+          aria-label="بحث عن طبيب أو عيادة">
+        
+        <button type="submit" onclick="search()">بحث</button>
+      </div>
+      <ul id="suggestions" class="suggestions-list"></ul>
+
+         <!-- <datalist id="doctor-options">
           <option value="دكتور أحمد علي - جراحة">
           <option value="دكتور فاطمة مصطفى - طب الأطفال">
           <option value="دكتور محمد يوسف - أمراض القلب">
@@ -53,9 +64,9 @@
           <option value="دكتور كريم سامي - طب الأسنان">
           <option value="دكتور نور الدين - الأنف والأذن والحنجرة">
           <option value="دكتور عادل سعيد - الطب الباطني">
-        </datalist>
-        <button type="submit">بحث</button>
-      </div>
+        </datalist> -->
+        
+      
     </form>
   </div>
 </section>
@@ -64,7 +75,7 @@
 
 
   
-  <!--cards-->
+<!--cards-->
   <section class="features">
     <div class="feature-card">
       <img src="../media/booking.jpg" alt="Book Appointments">
@@ -91,6 +102,7 @@
     </div>
   </section>
   
+<!--Footer-->
   <footer class="footer">
     <div class="contact-info">
       <p><strong>Email:</strong> <a href="mailto:info@re3aya.com">info@re3aya.com</a></p>
