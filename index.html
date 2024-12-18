@@ -15,16 +15,43 @@
       <a href="signup.html">
         <button class="btn signup">إنشاء حساب</button>
       </a>
+       <button class="open-dashboard-btn" onclick="toggleDashboard()">عرض لوحة التحكم</button>
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <div class="notification-icon-container">
+            <!-- Hidden Checkbox to control the popup visibility -->
+            <input type="checkbox" id="notification-toggle" class="notification-toggle">
+            
+            <!-- Notification Icon (Bell) -->
+            <label for="notification-toggle" class="notification-icon">
+              <img src="https://img.icons8.com/ios/452/bell.png" alt="Notification">
+              <div class="notification-dot"></div>
+            </label>
+            
+            <!-- Notification Popup -->
+            <div class="notification-popup">
+              <div class="notification">
+                <h4 class="notification-title">Reminder</h4>
+                <p class="notification-message">Don't forget to check your health status today!</p>
+                <label for="notification-toggle" class="close-btn">X</label>
+              </div>
+            </div>
+          </div>
+          
+
+
       
       </div>
     <nav class="nav-menu">
       <ul>
         <li><a href="#home">الرئيسية</a></li>
         <li><a href="#appointments">المواعيد</a></li>
-        <li><a href="#providers">شركاءنا</a></li>
+        <li><a href="partners.html">شركاءنا</a></li>
         <li><a href="#records">السجلات الصحية</a></li>
         <li><a href="#resources">معلومات </a></li>
         <li><a href="#contact">تواصل معنا</a></li>
+     
       </ul>
     </nav>
 
@@ -34,6 +61,31 @@
       </div>
     
   </header>
+  <!-- Hidden Dashboard Modal -->
+  <div class="dashboard-modal" id="dashboard-modal">
+    <div class="dashboard">
+      <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="dashboard-sidebar">
+          <ul>
+            <li><a href="#">الملف الشخصي</a></li>
+            <li><a href="#">الإعدادات</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDashboard() {
+      const modal = document.getElementById("dashboard-modal");
+      modal.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
+
+
 
 
 <!--search-->
@@ -62,6 +114,7 @@
 
 
 
+ 
 
   
   <!--cards-->
