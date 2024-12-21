@@ -8,12 +8,11 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.7, 3.8, 3.9]
+        python-version: [3.7, 3.8, 3.9]  # تعديل هنا لاستخدام إصدارات Python المدعومة
 
     steps:
     - uses: actions/checkout@v4
@@ -25,6 +24,13 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    - name: Set up Database (PostgreSQL)
+      uses: docker://postgres:latest
+      with:
+        args: -e POSTGRES_PASSWORD=mysecretpassword
+    - name: Run Migrations
+      run: |
+        python manage.py migrate --settings=myproject.settings.test
     - name: Run Tests
       run: |
-        python manage.py test
+        python manage.py test --settings=myproject.settings.test
