@@ -1,8 +1,14 @@
 /********** Template CSS **********/
 :root {
+<<<<<<< HEAD
     --primary: #5f2787;
     --light: #6a4c93;
     --dark: #EFB6C8;
+=======
+    --primary: #0463FA;
+    --light: #EFF5FF;
+    --dark: #1B2C51;
+>>>>>>> 33b8b2b5abf403b934fdc1f7d9b29e51b6143292
 }
 
 .fw-medium {
@@ -49,7 +55,11 @@
 
 .btn.btn-primary,
 .btn.btn-secondary {
+<<<<<<< HEAD
     color: #3b0b55;
+=======
+    color: #FFFFFF;
+>>>>>>> 33b8b2b5abf403b934fdc1f7d9b29e51b6143292
 }
 
 .btn-square {
@@ -91,7 +101,11 @@
 .navbar .navbar-nav .nav-link {
     margin-right: 30px;
     padding: 25px 0;
+<<<<<<< HEAD
     color: #3b0b55;
+=======
+    color: #FFFFFF;
+>>>>>>> 33b8b2b5abf403b934fdc1f7d9b29e51b6143292
     font-size: 15px;
     font-weight: 500;
     text-transform: uppercase;
@@ -110,7 +124,11 @@
     }
 
     .navbar .navbar-nav {
+<<<<<<< HEAD
         border-top: 1px solid #3b0b55;
+=======
+        border-top: 1px solid #EEEEEE;
+>>>>>>> 33b8b2b5abf403b934fdc1f7d9b29e51b6143292
     }
 }
 
@@ -160,7 +178,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
     text-shadow: 0 0 30px rgba(211, 89, 236, 0.813);
+=======
+    text-shadow: 0 0 30px rgba(0, 0, 0, .1);
+>>>>>>> 33b8b2b5abf403b934fdc1f7d9b29e51b6143292
 }
 
 .header-carousel .owl-nav {
@@ -181,9 +203,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
     color: #EFB6C8;
     background: transparent;
     border: 1px solid #EFB6C8;
+=======
+    color: #FFFFFF;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+>>>>>>> 33b8b2b5abf403b934fdc1f7d9b29e51b6143292
     border-radius: 45px;
     font-size: 22px;
     transition: .5s;
@@ -213,7 +241,11 @@
     width: 15px;
     height: 15px;
     background: transparent;
+<<<<<<< HEAD
     border: 1px solid #EFB6C8;
+=======
+    border: 1px solid #FFFFFF;
+>>>>>>> 33b8b2b5abf403b934fdc1f7d9b29e51b6143292
     border-radius: 15px;
     transition: .5s;
 }
@@ -225,7 +257,11 @@
     height: 5px;
     top: 4px;
     left: 4px;
+<<<<<<< HEAD
     background: #EFB6C8;
+=======
+    background: #FFFFFF;
+>>>>>>> 33b8b2b5abf403b934fdc1f7d9b29e51b6143292
     border-radius: 5px;
 }
 
@@ -260,7 +296,11 @@
     height: 40px;
     display: inline-flex;
     align-items: center;
+<<<<<<< HEAD
     background: #EFB6C8;
+=======
+    background: #FFFFFF;
+>>>>>>> 33b8b2b5abf403b934fdc1f7d9b29e51b6143292
     border-radius: 40px;
     white-space: nowrap;
     overflow: hidden;
@@ -330,12 +370,20 @@
 .team-item .team-social .btn {
     display: inline-flex;
     color: var(--primary);
+<<<<<<< HEAD
     background: #EFB6C8;
+=======
+    background: #FFFFFF;
+>>>>>>> 33b8b2b5abf403b934fdc1f7d9b29e51b6143292
     border-radius: 40px;
 }
 
 .team-item .team-social .btn:hover {
+<<<<<<< HEAD
     color: #EFB6C8;
+=======
+    color: #FFFFFF;
+>>>>>>> 33b8b2b5abf403b934fdc1f7d9b29e51b6143292
     background: var(--primary);
 }
 
@@ -376,7 +424,11 @@
     left: 0;
     height: 100%;
     width: 0;
+<<<<<<< HEAD
     background: linear-gradient(to right, rgb(213, 124, 231) 0%, rgba(65, 2, 71, 0.783) 100%);
+=======
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+>>>>>>> 33b8b2b5abf403b934fdc1f7d9b29e51b6143292
     z-index: 1;
 }
 
@@ -387,7 +439,11 @@
     right: 0;
     height: 100%;
     width: 0;
+<<<<<<< HEAD
     background: linear-gradient(to left, rgba(213, 124, 231) 0%, rgba(65, 2, 71, 0.783) 100%);
+=======
+    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+>>>>>>> 33b8b2b5abf403b934fdc1f7d9b29e51b6143292
     z-index: 1;
 }
 
@@ -470,7 +526,11 @@
     align-items: center;
     justify-content: center;
     color: var(--light);
+<<<<<<< HEAD
     border: 1px solid #EFB6C8;
+=======
+    border: 1px solid #FFFFFF;
+>>>>>>> 33b8b2b5abf403b934fdc1f7d9b29e51b6143292
     transition: .3s;
 }
 
@@ -483,7 +543,11 @@
     margin-bottom: 5px;
     padding: 0;
     text-align: left;
+<<<<<<< HEAD
     color: #EFB6C8;
+=======
+    color: #FFFFFF;
+>>>>>>> 33b8b2b5abf403b934fdc1f7d9b29e51b6143292
     font-size: 15px;
     font-weight: normal;
     text-transform: capitalize;
