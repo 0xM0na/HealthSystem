@@ -1,4 +1,4 @@
-name: Debug Python Versions
+name: Django CI
 
 on:
   push:
@@ -7,22 +7,31 @@ on:
     branches: [ "main" ]
 
 jobs:
-  debug:
+  test:
     runs-on: ubuntu-latest
+
     steps:
+    # Step 1: Check out the repository
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Debug Python Versions
-      run: curl -s https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json | jq .
-
-    - name: Set up Python
+    # Step 2: Set up Python environment (Python 3.9)
+    - name: Set up Python 3.9
       uses: actions/setup-python@v4
       with:
         python-version: 3.9
 
-    - name: Verify Python Version
-      run: python --version
+    # Step 3: Install dependencies
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
 
-    - name: Print Hello World
-      run: echo "Hello World from Python 3.9"
+    # Step 4: Set up the database (SQLite for simplicity)
+    - name: Apply migrations
+      run: |
+        python manage.py migrate
+
+    # Step 5: Run tests
+    - name: Run Django tests
+      run: python manage.py test
