@@ -17,11 +17,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python 3.9
       uses: actions/setup-python@v4
       with:
-        python-version: ${{ matrix.python-version }}
-
+        python-version: 3.9
     - name: Test Step 1
       run: echo "Hello World from Python ${{ matrix.python-version }}"
 
