@@ -1,4 +1,4 @@
-name: Django CI Test
+name: Debug Python Versions
 
 on:
   push:
@@ -7,22 +7,22 @@ on:
     branches: [ "main" ]
 
 jobs:
-  test:
+  debug:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.9, 3.10, 3.11] # Valid Python versions
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Set up Python 3.9
+    - name: Debug Python Versions
+      run: curl -s https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json | jq .
+
+    - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: 3.9
-    - name: Test Step 1
-      run: echo "Hello World from Python ${{ matrix.python-version }}"
 
-    - name: Test Step 2
-      run: echo "Workflow is running successfully!"
+    - name: Verify Python Version
+      run: python --version
+
+    - name: Print Hello World
+      run: echo "Hello World from Python 3.9"
