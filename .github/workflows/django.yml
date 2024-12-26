@@ -1,132 +1,38 @@
-tests:
-  - name: Doctor Signup Test
-    setup:
-      specialization:
-        name: "Cardiology"
-      user:
-        username: "testdoctor"
-        email: "testdoctor@example.com"
-        password: "password123"
-        user_type: 2
-      doctor:
-        mobilenumber: "1234567890"
-        specialization: "Cardiology"
-      appointments:
-        - fullname: "John Doe"
-          email: "johndoe@example.com"
-          mobilenumber: "9876543210"
-          doctor: "testdoctor"
-          date_of_appointment: "2024-12-26"
-          time_of_appointment: "10:30:00"
-          status: "0"
-        - fullname: "Jane Smith"
-          email: "janesmith@example.com"
-          mobilenumber: "8765432190"
-          doctor: "testdoctor"
-          date_of_appointment: "2024-12-26"
-          time_of_appointment: "14:00:00"
-          status: "Approved"
-    test:
-      endpoint: "docsignup"
-      method: POST
-      data:
-        first_name: "John"
-        last_name: "Doe"
-        username: "johndoe"
-        email: "johndoe@example.com"
-        password: "password123"
-        mobno: "1234567890"
-        specialization_id: "Cardiology"
-        pic: "test_image.jpg"
-      assertions:
-        - response_code: 302
-        - redirect_url: "/docsignup/"
+name: Doctor Appointment Management Tests
 
-  - name: View Appointments Test
-    setup:
-      login:
-        username: "testdoctor"
-        password: "password123"
-    test:
-      endpoint: "view_appointment"
-      method: GET
-      assertions:
-        - response_code: 200
-        - contains: "John Doe"
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
-  - name: Update Appointment Status Test
-    setup:
-      login:
-        username: "testdoctor"
-        password: "password123"
-    test:
-      endpoint: "patient_appointment_details_remark"
-      method: POST
-      data:
-        pat_id: 1
-        remark: "Follow-up required"
-        status: "Approved"
-      assertions:
-        - response_code: 302
-        - updated_appointment_status: "Approved"
-        - updated_remark: "Follow-up required"
+jobs:
+  test:
+    runs-on: ubuntu-latest
 
-  - name: Search Appointments Test
-    setup:
-      login:
-        username: "testdoctor"
-        password: "password123"
-    test:
-      endpoint: "search_appointment"
-      method: GET
-      params:
-        query: "John"
-      assertions:
-        - response_code: 200
-        - contains: "John Doe"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-  - name: Between Date Report Test
-    setup:
-      login:
-        username: "testdoctor"
-        password: "password123"
-    test:
-      endpoint: "between_date_report"
-      method: GET
-      params:
-        start_date: "2024-12-24"
-        end_date: "2024-12-26"
-      assertions:
-        - response_code: 200
-        - contains:
-            - "John Doe"
-            - "Jane Smith"
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
 
-  - name: Patient Prescription Test
-    setup:
-      login:
-        username: "testdoctor"
-        password: "password123"
-    test:
-      endpoint: "patientappointmentprescription"
-      method: POST
-      data:
-        pat_id: 1
-        prescription: "Paracetamol 500mg"
-        recommendedtest: "Blood Test"
-        status: "Completed"
-      assertions:
-        - response_code: 302
-        - updated_prescription: "Paracetamol 500mg"
-        - updated_test: "Blood Test"
-        - updated_status: "Completed"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-  teardown:
-    delete:
-      users:
-        - "testdoctor"
-      specializations:
-        - "Cardiology"
-      appointments:
-        - "John Doe"
-        - "Jane Smith"
+      - name: Run Tests
+        run: |
+          pytest tests/
+
+      - name: Report Test Results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: ./test-results/
